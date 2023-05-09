@@ -1,0 +1,121 @@
+@import "../../style.scss";
+
+.login {
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    width: 100%;
+    padding: 15px;
+    background: none;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 0.5em;
+    font-size: 1rem;
+    margin: auto;
+
+    @include mobile {
+      padding: 10px;
+      font-size: 0.8rem;
+    }
+  }
+  button:hover {
+    scale: 99%;
+  }
+  button:focus{
+    border-radius: 8px;
+  }
+
+  .card {
+    width: 50%;
+    display: flex;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 600px;
+
+    @include mobile {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+        url("https://cdn.albumoftheyear.org/album/639985-magic-lantern_1630.jpg")
+          center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 3em;
+        text-align: center;
+
+        @include mobile {
+          font-size: 2rem;
+        }
+      }
+
+      .option {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        p {
+          text-align: center;
+        }
+      }
+
+      @include mobile {
+        padding: 2rem;
+      }
+    }
+
+    .right {
+      flex: 1;
+      padding: 2em;
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      @include mobile {
+        margin-top: 0;
+      }
+
+      h1 {
+        color: #ffffff;
+        line-height: 1.5em;
+        margin-bottom: 0.8em;
+
+        @include mobile {
+          font-size: 1.3rem;
+          text-align: center;
+        }
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+        input {
+          background: none;
+          border: none;
+          border-bottom: 1px solid #c5c5c5;
+          padding: 18px 10px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

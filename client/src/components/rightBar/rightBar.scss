@@ -1,0 +1,105 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 58px;
+    height: calc(100vh - 58px);
+    overflow: scroll;
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      .item {
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        padding: 20px;
+        margin-bottom: 8px;
+        background-color: themed("bg");
+        border-radius: 8px;
+
+        span {
+          color: gray;
+          font-size: 0.9rem;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 20px 0px;
+          font-size: 0.8rem;
+
+          span {
+            font-size: 0.8rem;
+          }
+
+          .userInfo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: limegreen;
+
+              position: absolute;
+              top: 0;
+              left: 30px;
+            }
+            p {
+              color: themed("textColorSoft");
+            }
+            span {
+              font-weight: 500;
+              color: themed("textColor");
+              cursor: pointer;
+            }
+            span:hover {
+              text-decoration: underline;
+            }
+          }
+
+          button {
+            border: none;
+            background-color: themed("bg");
+            color: themed("textColor");
+            cursor: pointer;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          button:hover {
+            background-color: themed("bgSoft");
+            transition: 0.2s;
+          }
+        }
+      }
+    }
+  }
+}

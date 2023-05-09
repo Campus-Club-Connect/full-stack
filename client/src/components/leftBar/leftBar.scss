@@ -1,0 +1,92 @@
+@import "../../style.scss";
+
+.leftBar {
+  @include themify($themes) {
+    flex: 2.5;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 58px;
+    height: calc(100vh - 58px);
+    overflow: auto;
+    color: themed("textColor");
+    background-color: #f2f2f2;
+
+    @include mobile {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 16px;
+      display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #7b7d7f;
+      border: 7px solid #fff;
+      border-radius: 10rem;
+    }
+    &::-webkit-scrollbar-track {
+      position: absolute;
+      right: -3rem;
+      top: -50rem;
+      background: transparent;
+    }
+
+    .container {
+      padding: 20px;
+      background-color: themed("bgSoft");
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: themed("bg");
+        padding: 20px;
+        border-radius: 8px;
+
+        span {
+          font-size: 0.8rem;
+        }
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            margin-left: 8px;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
